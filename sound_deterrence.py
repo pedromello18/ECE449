@@ -42,6 +42,6 @@ def play_audio(file_path):
     try:
         subprocess.run(f"mpg321 {file_path}", shell=True, check=True)
         print(f"Playing audio file: {file_path}")
-    except: subprocess.CalledProcessError:
+    except subprocess.CalledProcessError:
         print(f"Failed to play audio file: {file_path}")
 
