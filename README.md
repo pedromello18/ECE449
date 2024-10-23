@@ -1,4 +1,6 @@
 **AnimalDeterreceSystem.py:** Run this to start the system. Creates an object with a state variable that switches from IDLE to DETECTION to DETERRENCE.
+* currently simulates with P(beam_break) = P(animal_detected) = 0.10
+* TODO: add in the functions from FSM diagram
 
 **sound_deterrence.py:** Comments in the beginning include instructions for setting up the speaker on the RPI before running.
 * connect_bluetooth_speaker(speaker_mac): connects to speaker with mac format of "XX:XX:XX:XX:XX:XX"
