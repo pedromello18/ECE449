@@ -1,6 +1,5 @@
 # light_deterrence.py
 # Veg Group 2
-# Alex Penne
 
 # Setup Instructions:
 # install libraries:

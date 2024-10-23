@@ -1,6 +1,5 @@
 # sound_deterrence.py
 # Veg Group 2
-# Alex Penne
 
 # RPI4B Configuration:
 
