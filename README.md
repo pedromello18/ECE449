@@ -20,3 +20,4 @@
 
 **TODO:**
 * add motion code
+* test speaker, strobe, flood, code separately then add to FSM
