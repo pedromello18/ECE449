@@ -20,15 +20,18 @@
 import os
 import subprocess
 import time
+import pygame
 
 # speaker_mac (str): "XX:XX:XX:XX:XX:XX"
 def connect_bluetooth_speaker(speaker_mac):
-    # turn on bluetooth service
-    subprocess.run("sudo systemct1 start bluetooth", shell=True)
+    # restart bluetooth service
+    subprocess.run("sudo systemctl stop bluetooth", shell=True) 
+    subprocess.run("sudo systemctl start bluetooth", shell=True)
+    subprocess.run(f"bluetoothctl info {speaker_mac}", shell = True)
 
     # attempt to connect to speaker
     try:
-        subprocess.run(f"bluetoothct1 connect {speaker_mac}", shell=True, check=True)
+        subprocess.run(f"bluetoothctl connect {speaker_mac}", shell=True, check=True)
         print(f"Connected to bluetooth speaker {speaker_mac}")
         return True
     except subprocess.CalledProcessError:
@@ -40,8 +43,11 @@ def play_audio(file_path):
     # play the MP3 file using mpg321
 
     try:
-        subprocess.run(f"mpg321 {file_path}", shell=True, check=True)
-        print(f"Playing audio file: {file_path}")
+        #pygame.init()
+        #pygame.mixer.music.load('./Pi_MP3/C_00.mp3')
+        #pygame.mixer.music.play()
+        subprocess.Popen(f"mpg321 {file_path}", shell=True)
+        
     except subprocess.CalledProcessError:
         print(f"Failed to play audio file: {file_path}")
 
