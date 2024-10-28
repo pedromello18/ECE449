@@ -53,7 +53,7 @@ class AnimalDeterrenceSystem:
                 
                 
                 # TODO: turn off cameras and turn on motor and define audio path
-                #run_sound_deterrence(speaker_mac, self.cycle) # make sure speaker is on!
+                run_sound_deterrence(speaker_mac, self.cycle) # make sure speaker is on!
                 # Turn off flood light.
                 #turn_off_flood_light()
                 # Turn on strobe light.
