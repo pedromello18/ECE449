@@ -22,6 +22,23 @@ import subprocess
 import time
 import pygame
 
+def run_sound_deterrence(speaker_mac, cycle):
+    # Attempt to connect to speaker.
+    if (connect_bluetooth_speaker(speaker_mac)):
+        print("Connected to speaker.")
+        # Play audio.
+        if cycle < 10:
+            file_path = f"./Pi_MP3/C_0{cycle}.mp3"
+        else:
+            last_digit = cycle - 10
+            file_path = f"./Pi_MP3/C_1{last_digit}.mp3"
+                     
+        print(f"Playing audio file: {file_path}")
+        play_audio(file_path)
+    else:
+        print("Failed to connect to speaker.")
+                    
+
 # speaker_mac (str): "XX:XX:XX:XX:XX:XX"
 def connect_bluetooth_speaker(speaker_mac):
     # restart bluetooth service
@@ -43,9 +60,6 @@ def play_audio(file_path):
     # play the MP3 file using mpg321
 
     try:
-        #pygame.init()
-        #pygame.mixer.music.load('./Pi_MP3/C_00.mp3')
-        #pygame.mixer.music.play()
         subprocess.Popen(f"mpg321 {file_path}", shell=True)
         
     except subprocess.CalledProcessError:

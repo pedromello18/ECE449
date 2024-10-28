@@ -53,27 +53,13 @@ class AnimalDeterrenceSystem:
                 
                 
                 # TODO: turn off cameras and turn on motor and define audio path
-
-                # TUrn off flood light.
+                #run_sound_deterrence(speaker_mac, self.cycle) # make sure speaker is on!
+                # Turn off flood light.
                 #turn_off_flood_light()
                 # Turn on strobe light.
                 #turn_on_strobe_light()
                
-                # Attempt to connect to speaker.
-                if (connect_bluetooth_speaker(speaker_mac)):
-                    print("Connected to speaker.")
-                     # Play audio.
-                    if self.cycle < 10:
-                        file_path = f"./Pi_MP3/C_0{self.cycle}.mp3"
-                    else:
-                        last_digit = self.cycle - 10
-                        file_path = f"./Pi_MP3/C_1{last_digit}.mp3"
-                     
-                    print(f"Playing audio file: {file_path}")
-                    play_audio(file_path)
-                else:
-                    print("Failed to connect to speaker.")
-                    
+                
                
                 self.state = 'deterrence'
                 self.start_time = current_time
