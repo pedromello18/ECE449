@@ -12,7 +12,7 @@ import RPi.GPIO as GPIO
 import time
 
 # Define the GPIO pins
-FLOOD_PIN = 20
+FLOOD_PIN = 38 # yellow
 
 # Setup GPIO as outputs
 GPIO.setmode(GPIO.BCM) # Use BCM numbering
@@ -26,3 +26,5 @@ def turn_on_flood_light():
 def turn_off_flood_light():
     GPIO.output(POWER_PIN, GPIO.HIGH)
     print("Flood light turned OFF.")
+
+turn_on_flood_light()
