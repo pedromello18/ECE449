@@ -8,6 +8,7 @@ import random # used for simulation
 from sound_deterrence import *
 from light_deterrence import *
 from flood_light import *
+from beam_break import *
 
 # TODO: connect speaker and trust to get mac addr
 speaker_mac = "00:1A:7D:B0:57:39"
@@ -110,7 +111,7 @@ class AnimalDeterrenceSystem:
 # Function to simulate beam break sensor (replace this with real sensor input)
 def get_beam_break_sensor_value():
     # TODO: code to read from the beam break sensor
-    return decision(.5)  # Simulate beam break sensor (replace with real value)
+    return monitor_beam() # Simulate beam break sensor (replace with real value)
 
 # Function to simulate animal detection sensor (replace this with real sensor input)
 def get_animal_detection_sensor_value():
