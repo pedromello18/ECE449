@@ -94,16 +94,18 @@ class AnimalDeterrenceSystem:
         while True:
             
             # Update beam and detection algorithm if in correct state.
-            if self.state == 'idle':
+            if self.state == 'idle': # IDLE STATE: update beam break ONLY
                 beam_break_broken = get_beam_break_sensor_value()
                 self.update(beam_break_broken, 0)
-            elif self.state == 'detection':
+            elif self.state == 'detection': # DETECTION STATE: update camera ONLY
                 animal_detected = get_animal_detection_sensor_value()
                 self.update(0, animal_detected)
-            else:
+            else: # DETERRENCE STATE: update nothing (waits 20 seconds to return to idle)
                 self.update(0,0)
+
+            # REMOVE WHEN READY TO TEST BEAM BREAK/CAMERA
+            #time.sleep(1)  # Delay to simulate real-time updates
             
-            time.sleep(1)  # Delay to simulate real-time updates
 
 # Function to simulate beam break sensor (replace this with real sensor input)
 def get_beam_break_sensor_value():
