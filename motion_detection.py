@@ -22,7 +22,7 @@ def detect_frame(cap):
     
     motionDetected = False
 
-    for i, c in enumerate(contours):
+    for c in contours:
         area = cv2.contourArea(c)
         if area < 1250: continue
         else: motionDetected = True
@@ -60,6 +60,5 @@ def detect_video(cap):
         key = cv2.waitKey(1) & 0xFF
         if key == ord('q'): break
 
-def run_detection():
-    cap = cv2.VideoCapture(-1)
+def run_detection(cap):
     return detect_frame(cap)
