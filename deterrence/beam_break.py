@@ -10,7 +10,7 @@ SENSOR_PIN = 17 # Example GPIO pin
 # Setup the pin as an input
 GPIO.setup(SENSOR_PIN, GPIO.IN)
 
-# Number of samples to take
+# Number of samples to take                                                                                                                                                               
 NUM_SAMPLES = 10 # Take 10 samples over a short period
 SAMPLE_INTERVAL = 0.01 # 10 milliseconds between samples
 
@@ -36,12 +36,9 @@ def monitor_beam():
         return -1
 
 def test_beam_break():
-    try:
-        monitor_beam()
-    except KeyboardInterrupt:
-        print("Stopping program.")
-    finally:
-        GPIO.cleanup()
+    print(monitor_beam())
+    
+test_beam_break()
         
             
 
