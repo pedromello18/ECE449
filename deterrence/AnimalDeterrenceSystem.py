@@ -5,10 +5,10 @@
 
 import time
 import random # used for simulation
-from sound_deterrence import *
-from light_deterrence import *
-from flood_light import *
-from beam_break import *
+from deterrence.sound_deterrence import *
+from deterrence.light_deterrence import *
+from deterrence.flood_light import *
+from deterrence.beam_break import *
 
 # TODO: connect speaker and trust to get mac addr
 speaker_mac = "00:1A:7D:B0:57:39"
