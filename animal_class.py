@@ -4,13 +4,14 @@ import numpy as np
 
 #This is to pull the information about what each object is called
 classNames = []
-classFile = "coco.names"
+modelDir = "models"
+classFile = modelDir + "/coco.names"
 with open(classFile,"rt") as f:
     classNames = f.read().rstrip("\n").split("\n")
 
 #This is to pull the information about what each object should look like
-configPath = "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt"
-weightsPath = "frozen_inference_graph.pb"
+configPath = modelDir + "/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt"
+weightsPath = modelDir + "/frozen_inference_graph.pb"
 
 #This is some set up values to get good results
 net = cv2.dnn.DetectionModel(weightsPath, configPath)
