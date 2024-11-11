@@ -2,6 +2,11 @@
 # Veg Group 2
 # Run this to start the system. Currently in simulation mode.
 
+# 11/11 TODO (Alex):
+# Test flood light and strobe light with 3V relays. Test modulated, then combined.
+# Test camera setup and implement deterrence into FSM.
+# Become familiar with motion deterrence and detection code today.
+
 
 import time
 import random # used for simulation
@@ -54,7 +59,7 @@ class AnimalDeterrenceSystem:
                 
                 
                 # TODO: turn off cameras and turn on motor and define audio path
-                run_sound_deterrence(speaker_mac, self.cycle) # make sure speaker is on!
+                #run_sound_deterrence(speaker_mac, self.cycle) # make sure speaker is on!
                 # Turn off flood light.
                 #turn_off_flood_light()
                 # Turn on strobe light.
