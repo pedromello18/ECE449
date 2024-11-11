@@ -6,6 +6,8 @@
 # sudo apt-get update
 # sudo apt-get install python3-rpi.gpio
 
+# TODO: (alex) Q: What voltage signal needed to change pattern? Check with power supply first
+
 # Replace code with correct pins (Power and Signal)
 
 import RPi.GPIO as GPIO

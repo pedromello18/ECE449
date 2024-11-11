@@ -27,4 +27,3 @@ def turn_off_flood_light():
     GPIO.output(POWER_PIN, GPIO.HIGH)
     print("Flood light turned OFF.")
 
-turn_on_flood_light()
