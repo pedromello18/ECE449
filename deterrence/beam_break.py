@@ -43,7 +43,7 @@ def monitor_beam():
         # Determine the beam status based on the majority of samples
         if unbroken_count > broken_count:
             print("Beam intact")
-            return -1
+            return 0
         else:
             print("Beam broken")
             return 1
