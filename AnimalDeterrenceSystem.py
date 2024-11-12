@@ -15,8 +15,6 @@ from deterrence.light_deterrence import *
 from deterrence.flood_light import *
 from deterrence.beam_break import *
 
-# TODO: connect speaker and trust to get mac addr
-speaker_mac = "00:1A:7D:B0:57:39"
 
 class AnimalDeterrenceSystem:
 
@@ -59,7 +57,7 @@ class AnimalDeterrenceSystem:
                 
                 
                 # TODO: turn off cameras and turn on motor and define audio path
-                #run_sound_deterrence(speaker_mac, self.cycle) # make sure speaker is on!
+                # run_sound_deterrence(self.cycle) # should be good to go
                 # Turn off flood light.
                 #turn_off_flood_light()
                 # Turn on strobe light.
