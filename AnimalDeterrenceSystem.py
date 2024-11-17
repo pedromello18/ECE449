@@ -14,6 +14,7 @@ from deterrence.sound_deterrence import *
 from deterrence.light_deterrence import *
 from deterrence.flood_light import *
 from deterrence.beam_break import *
+from test_camera.signal_test_picture import *
 
 
 class AnimalDeterrenceSystem:
@@ -43,6 +44,9 @@ class AnimalDeterrenceSystem:
 
                 # Turn on flood light.
                 turn_on_flood_light()
+
+                # Send signal to testing camera
+                send_signal()
 
                 # Change state to Detection.
                 self.state = 'detection'

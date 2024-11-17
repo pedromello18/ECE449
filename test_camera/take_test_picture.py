@@ -22,3 +22,5 @@ def wait_for_signal():
             print("Signal detected!")
             capture_image()
             time.sleep(1)  # Debounce, avoid multiple captures
+
+wait_for_signal()
