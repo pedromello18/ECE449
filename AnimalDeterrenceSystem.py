@@ -16,6 +16,7 @@ from deterrence.flood_light import *
 from deterrence.beam_break import *
 from test_camera.signal_test_picture import *
 
+TEST_CAMERA_PIN = 17
 
 class AnimalDeterrenceSystem:
 
@@ -43,7 +44,7 @@ class AnimalDeterrenceSystem:
                 # TODO: need to turn on cameras
 
                 # Turn on flood light.
-                turn_on_flood_light()
+                turn_on_flood_light(TEST_CAMERA_PIN)
 
                 # Send signal to testing camera
                 send_signal()
@@ -77,6 +78,10 @@ class AnimalDeterrenceSystem:
 
                 # Turn off flood light.
                 turn_off_flood_light()
+
+                # Turn off test camera signal
+                turn_off_signal(TEST_CAMERA_PIN)
+
                 self.state = 'idle'
 
         elif self.state == 'deterrence':
@@ -96,6 +101,10 @@ class AnimalDeterrenceSystem:
                 change_strobe_pattern()
                 # Turn off strobe light.
                 turn_off_strobe_light()
+                
+                # Turn off test camera signal
+                turn_off_signal(TEST_CAMERA_PIN)
+
                 self.state = 'idle'
 
     def run(self):

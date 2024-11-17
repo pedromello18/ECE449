@@ -1,11 +1,13 @@
 import RPi.GPIO as GPIO
-import time
 
-def send_signal():
+def send_signal(pin):
     GPIO.setmode(GPIO.BCM)
-    SEND_PIN = 17 # TODO make sure it's not being used
-    GPIO.setup(SEND_PIN, GPIO.OUT)
-    GPIO.output(SEND_PIN, GPIO.HIGH)
-    time.sleep(1)
-    GPIO.output(SEND_PIN, GPIO.LOW)
-    print("Signal sent to trigger image capture.")
+    GPIO.setup(pin, GPIO.OUT)
+    GPIO.output(pin, GPIO.HIGH)
+    print("Positive Edge on Test Camera Singal.")
+
+def turn_off_signal(pin):
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(pin, GPIO.OUT)
+    GPIO.output(pin, GPIO.LOW)
+    print("Negative Edge on Test Camera Singal.")
