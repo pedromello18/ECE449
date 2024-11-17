@@ -47,7 +47,7 @@ class AnimalDeterrenceSystem:
                 turn_on_flood_light(TEST_CAMERA_PIN)
 
                 # Send signal to testing camera
-                send_signal()
+                send_signal(TEST_CAMERA_PIN)
 
                 # Change state to Detection.
                 self.state = 'detection'
